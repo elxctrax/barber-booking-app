@@ -1,12 +1,20 @@
+"use client"
+
+import { useState } from "react";
 import BookCalendar from "@/components/BookCalendar";
+import InputBasic from "@/components/InputBasic";
 import ServiceCard from "@/components/ServiceCard";
+import { Button } from "@/components/ui/button";
 
 
 
 export default function BookingPage() {
+    const [step, setStep] = useState(1)
+
     return (
         <main className="">
-            <section className="flex flex-col items-center text-center [padding:60px_24px]">
+            {step === 1 && (
+                <section className="flex flex-col items-center text-center [padding:60px_24px]">
                 <h1>Services</h1>
                 <h2>Book your preferred service.</h2> { /*going to change the title, desc, price from text to variables, interpolation*/ }
                 <div className="flex flex-col md:flex-row [gap:24px] mt-8">
@@ -14,12 +22,32 @@ export default function BookingPage() {
                     <ServiceCard title="Haircut (45 min)" description="Clean fade with precise blending" price="40.00" />
                     <ServiceCard title="Beard Shape Up (20 min)" description="Shape and trim your beard" price="25.00" />
                 </div>
+                <Button onClick={() => setStep(2)} className="bg-[#dee2e6] text-white hover:bg-[#adb5bd] rounded-none [padding:14px_32px] [margin-top:32px]">Continue</Button>
             </section>
+            )}
 
-            <section className="flex flex-col items-center text-center [padding:60px_24px]">
+            {step === 2 && (
+                <section className="flex flex-col items-center text-center [padding:60px_24px]">
                 <h2>Choose Date and Time</h2>
                 <BookCalendar className="[transform:scale(1.4)] [margin-top:32px]" />
+                <div className="flex flex-row md:flex-row [gap:24px] mt-8 [margin-top:32px]">
+                    <Button onClick={() => setStep(1)} className="bg-[#dee2e6] text-white hover:bg-[#adb5bd] rounded-none [padding:14px_32px] [margin-top:32px]">Back</Button>
+                    <Button onClick={() => setStep(3)} className="bg-[#dee2e6] text-white hover:bg-[#adb5bd] rounded-none [padding:14px_32px] [margin-top:32px]">Continue</Button>
+                </div>
             </section>
+            )}
+
+            {step === 3 && (
+                <section className="flex flex-col items-center text-center [padding:60px_24px]">
+                <h2>Enter Name for the Appointment</h2>
+                <InputBasic />
+                <div className="flex flex-row md:flex-row [gap:24px] mt-8 [margin-top:32px]">
+                    <Button onClick={() => setStep(2)} className="bg-[#dee2e6] text-white hover:bg-[#adb5bd] rounded-none [padding:14px_32px] [margin-top:24px]">Back</Button>
+                    <Button className="bg-[#80ed99] text-white hover:bg-[#adb5bd] rounded-none [padding:14px_32px] [margin-top:24px]">Confirm</Button>
+                </div>
+            </section>
+            )}
+
         </main>
     )
 }

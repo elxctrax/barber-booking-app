@@ -48,7 +48,7 @@ export default function Navbar() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="/booknow" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Book Now</Link>
+                <Link href="/booking" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Book Now</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
