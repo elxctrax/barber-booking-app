@@ -13,11 +13,13 @@ type ServiceCardProps = {
     title: string;
     description: string;
     price: string;
+    onClick?: () => void;
+    selectedService?: boolean;
 }
 
-export default function ServiceCard( { title, description, price} : ServiceCardProps) {
+export default function ServiceCard( { title, description, price, onClick, selectedService } : ServiceCardProps) {
   return (
-    <Card className="[width:250px] [padding:16px]">
+    <Card onClick={onClick} className={`[width:250px] [padding:16px] transition-transform hover:[transform:scale(1.05)] cursor-pointer ${selectedService ? "[border:2px_solid_#80ed99] [transform:scale(1.05)]" : ""}`}>
       <CardHeader className="[padding:24px]">
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>

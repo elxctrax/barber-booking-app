@@ -10,6 +10,12 @@ import { Button } from "@/components/ui/button";
 
 export default function BookingPage() {
     const [step, setStep] = useState(1)
+    const services = [
+        { id: "haircutWithBeard", title: "Haircut With Beard (1 hr)", description: "Professional hair cutting service", price: "45.00" },
+        { id: "haircut", title: "Haircut (45 min)", description: "Clean fade with precise blending", price: "40.00" },
+        { id: "beardShapeUp", title: "Beard Shape Up (20 min)", description: "Shape and trim your beard", price: "25.00" }
+    ]
+    const [selectedService, setSelectedService] = useState<string | null>(null)
 
     return (
         <main className="">
@@ -18,11 +24,18 @@ export default function BookingPage() {
                 <h1>Services</h1>
                 <h2>Book your preferred service.</h2> { /*going to change the title, desc, price from text to variables, interpolation*/ }
                 <div className="flex flex-col md:flex-row [gap:24px] mt-8">
-                    <ServiceCard title="Haircut With Beard (1 hr)" description="Professional hair cutting service" price="45.00" />
-                    <ServiceCard title="Haircut (45 min)" description="Clean fade with precise blending" price="40.00" />
-                    <ServiceCard title="Beard Shape Up (20 min)" description="Shape and trim your beard" price="25.00" />
+                    {services.map((services) => (
+                        <ServiceCard
+                            key={services.id}
+                            title={services.title}
+                            description={services.description}
+                            price={services.price}
+                            onClick={() => setSelectedService(services.id)}
+                            selectedService= {selectedService === services.id}
+                        />
+                    ))}
                 </div>
-                <Button onClick={() => setStep(2)} className="bg-[#dee2e6] text-white hover:bg-[#adb5bd] rounded-none [padding:14px_32px] [margin-top:32px]">Continue</Button>
+                <Button onClick={() => setStep(2)} disabled={!selectedService} className="bg-[#dee2e6] text-white hover:bg-[#adb5bd] rounded-none [padding:14px_32px] [margin-top:32px] cursor-pointer">Continue</Button>
             </section>
             )}
 
