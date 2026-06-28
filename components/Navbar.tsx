@@ -1,7 +1,5 @@
 import Link from "next/link"
 import { Menu } from "lucide-react"
-import { Separator } from "@/components/ui/separator"
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,7 +8,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-
 import {
   Sheet,
   SheetClose,
@@ -19,13 +16,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import VerticalSeparator from "./VerticalSeparator"
+import Image from "next/image"
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between bg-[#dee2e6] px-6 py-4 text-[#ffffff] [padding:16px_24px]">
+    <nav className="flex items-center justify-between bg-[#dee2e6] [opacity:0.9] px-6 py-4 text-[#ffffff] [padding:16px_24px]">
       <Link href="/" className="text-xl font-bold">
-        Barber Booking (insert logo)
+        <Image src="/barberLogo.jpg" alt="Barber-logo" width={60} height={60} className="rounded-full" />
       </Link>
 
       <div className="hidden items-center md:flex"> {/*desktop navbar */} 
@@ -33,17 +30,17 @@ export default function Navbar() {
           <NavigationMenuList className="gap-2">
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="#services" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Services</Link>
+                <Link href="/#services" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Services</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="#hours-location" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Hours</Link>
+                <Link href="/#hours-location" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Hours</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="#about" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">About</Link>
+                <Link href="/#about" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">About</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -61,23 +58,23 @@ export default function Navbar() {
             <button
               type="button"
               aria-label="Open navigation menu"
-              className="inline-flex size-10 items-center justify-center rounded-md transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
-              <Menu className="size-6" aria-hidden="true" />
+              className="[background:none] [border:none] cursor-pointer [padding:8px]">
+              <Image src="/menuIcon.png" alt="Hamburger Icon" width={24} height={24} />
             </button>
           </SheetTrigger>
-          <SheetContent>
+          <SheetContent side="right" className="[top:0] [height:100vh]">
             <SheetHeader>
               <SheetTitle>Barber Booking</SheetTitle>
             </SheetHeader>
             <div className="mt-4 flex flex-col gap-4">
               <SheetClose asChild>
-                <Link href="#services" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Services</Link>
+                <Link href="/#services" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Services</Link>
               </SheetClose>
               <SheetClose asChild>
-                <Link href="#hours-location" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Hours</Link>
+                <Link href="/#hours-location" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Hours</Link>
               </SheetClose>
               <SheetClose asChild>
-                <Link href="#about" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">About</Link>
+                <Link href="/#about" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">About</Link>
               </SheetClose>
               <SheetClose asChild>
                 <Link href="/booking" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Book Now</Link>

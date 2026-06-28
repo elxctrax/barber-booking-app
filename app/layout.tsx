@@ -22,11 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={roboto.className}>
       <body className="[margin:0]">
-        <Navbar />
-        {children}
-        <footer className="flex flex-col items-center text-center [padding:60px_24px]">
-        <p>&copy; 2026 Fresh Cuts. All rights reserved.</p>
-        </footer>
+          <Navbar />
+          {children}
+          <footer className="flex flex-col items-center text-center [padding:60px_24px]">
+          <p>&copy; 2026 Fresh Cuts. All rights reserved.</p>
+          </footer>
       </body>
     </html>
   );
