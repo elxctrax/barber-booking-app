@@ -33,17 +33,17 @@ export default function Navbar() {
           <NavigationMenuList className="gap-2">
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="/login" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Login</Link>
+                <Link href="#services" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Services</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="/signup" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Sign Up</Link>
+                <Link href="#hours-location" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Hours</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="/about" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">About</Link>
+                <Link href="#about" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">About</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -71,16 +71,16 @@ export default function Navbar() {
             </SheetHeader>
             <div className="mt-4 flex flex-col gap-4">
               <SheetClose asChild>
-                <Link href="/services" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Login</Link>
+                <Link href="#services" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Services</Link>
               </SheetClose>
               <SheetClose asChild>
-                <Link href="/login" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Sign Up</Link>
+                <Link href="#hours-location" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Hours</Link>
               </SheetClose>
               <SheetClose asChild>
-                <Link href="/signup" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">About</Link>
+                <Link href="#about" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">About</Link>
               </SheetClose>
               <SheetClose asChild>
-                <Link href="/about" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Book Now</Link>
+                <Link href="/booking" className="rounded-md text-sm font-semibold text-white hover:bg-[#adb5bd] transition-colors [padding:12px_24px]">Book Now</Link>
               </SheetClose>
             </div>
           </SheetContent>
