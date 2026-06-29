@@ -62,7 +62,7 @@ export default function Navbar() {
               <Image src="/menuIcon.png" alt="Hamburger Icon" width={24} height={24} />
             </button>
           </SheetTrigger>
-          <SheetContent side="right" className="[top:0] [height:100vh]">
+          <SheetContent side="right" className="[top:0] [height:100vh] bg-[#dee2e6] [opacity:0.9] [padding:24px]">
             <SheetHeader>
               <SheetTitle>Barber Booking</SheetTitle>
             </SheetHeader>

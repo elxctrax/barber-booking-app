@@ -12,7 +12,7 @@ export default function InputBasic({ value, onChange }: InputBasicProps) {
       placeholder="Enter your name" 
       value={value ?? ""}
       onChange={onChange}
-      className="[width:300px] [max-width:300px] [margin-top:16px] [padding:12px_16px] rounded-md" 
+      className="[width:300px] [max-width:300px] [margin-top:16px] [padding:12px_16px] rounded-md [color:#ffffff] [&::placeholder]:[color:rgba(255,255,255,0.5)]" 
     />
   )
 }
